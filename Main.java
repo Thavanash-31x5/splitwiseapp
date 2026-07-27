@@ -6,6 +6,8 @@ public class Main{
         System.out.println("Track shared expenses with friends");
         System.out.println();
         System.out.println("Ready. More features coming in the next lessons");
+        String name = "max";
+        System.out.println(name);
         double totalamt =500;
         System.out.println(totalamt);
         int numfrnds = 3;
