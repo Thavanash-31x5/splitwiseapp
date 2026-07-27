@@ -12,5 +12,7 @@ public class Main{
         System.out.println(totalamt);
         int numfrnds = 3;
         System.out.println(numfrnds);
+        double personshare = totalamt/numfrnds;
+        System.out.println(personshare);
     }
 }
