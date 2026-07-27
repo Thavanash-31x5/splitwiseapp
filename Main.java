@@ -1,13 +1,17 @@
 package splitwiseapp;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         System.out.println("=== Splitwise Console ===");
         System.out.println("Track shared expenses with friends");
         System.out.println();
         System.out.println("Ready. More features coming in the next lessons");
-        String payerName = "max";
-        double totalamt =500;
+        System.out.print("Who paid the expense:");
+        String payerName = sc.nextLine();
+        System.out.print("Total amount paid:");
+        double totalamt = sc.nextDouble();
         String expLine = payerName + " paid :" + totalamt;
         System.out.println(expLine);
         int numfrnds = 3;
