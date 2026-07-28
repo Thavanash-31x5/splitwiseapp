@@ -1,11 +1,12 @@
 package splitwiseapp;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.lang.String;
 
 public class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArrayList<String> friendsList = new ArrayList<>();
+        ArrayList<Friend> friendsList = new ArrayList<>();
         boolean runstate = true;
         while(runstate==true) {
             System.out.println("====Menu====");
@@ -44,8 +45,8 @@ public class Main{
                 case 3 ->{
                     if(friendsList.isEmpty()) System.out.println("No friends added yet.Add friends first!");
                     else{
-                        for(String name:friendsList){
-                            System.out.println("-" + name);
+                        for(Friend name:friendsList){
+                            System.out.println("-" + name.getName());
                         }
                     }
                 }
@@ -63,11 +64,12 @@ public class Main{
         }
 
     }
-    public static void addFriend(Scanner sc, ArrayList<String> friendsList){
+    public static void addFriend(Scanner sc, ArrayList<Friend> friendsList){
         System.out.println("Enter friend name:");
         String friendName = sc.nextLine();
-        friendsList.add(friendName);
+        friendsList.add(new Friend(friendName));
         System.out.println("added " + friendName);
+
 
     }
 }
