@@ -48,7 +48,7 @@ public class Main{
                     if(friendsList.isEmpty()) System.out.println("No friends added yet.Add friends first!");
                     else{
                         for(Friend name:friendsList){
-                            System.out.println("-" + name.getName());
+                            System.out.println(FriendDisplay.listLine(name));
                         }
                     }
                 }
@@ -71,8 +71,18 @@ public class Main{
         String friendName = sc.nextLine();
         Friend addFrObj = new Friend(friendName);
         friendsList.add(addFrObj);
-        System.out.println("added %s ( id %d )".formatted(addFrObj.getName(),addFrObj.getId()));
+        System.out.println(FriendDisplay.addedMessage(addFrObj));
 
 
+    }
+
+    private static class FriendDisplay {
+        static String listLine(Friend friend) {
+            return " %d: %s".formatted(friend.getId(), friend.getName());
+        }
+
+        static String addedMessage(Friend friend) {
+            return "Added %s (id %d) ".formatted(friend.getName(), friend.getId());
+        }
     }
 }
