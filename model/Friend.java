@@ -1,4 +1,4 @@
-package splitwiseapp;
+package splitwiseapp.model;
 
 public class Friend {
     private final String name;

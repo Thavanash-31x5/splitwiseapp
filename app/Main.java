@@ -1,4 +1,6 @@
-package splitwiseapp;
+package splitwiseapp.app;
+import splitwiseapp.model.ExpenseLine;
+import splitwiseapp.model.Friend;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.lang.String;
