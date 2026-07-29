@@ -8,7 +8,7 @@ public class Main{
         Scanner sc = new Scanner(System.in);
         ArrayList<Friend> friendsList = new ArrayList<>();
         boolean runstate = true;
-        while(runstate==true) {
+        while(runstate) {
             System.out.println("====Menu====");
             System.out.println("1. Record Expense");
             System.out.println("2. Add friends");
@@ -31,17 +31,16 @@ public class Main{
                         double totalAmt = sc.nextDouble();
                         int numfrnds = friendsList.size();
                         ExpenseLine expObj =  new ExpenseLine(payerName,totalAmt);
-                        String expLine = expObj.payerName() + " paid :" + expObj.totalAMt();
+                        String expLine = expObj.payerName() + "paid" + expObj.totalAMt();
                         System.out.println(expLine);
                         double personshare = expObj.totalAMt() / numfrnds;
                         String shareLine = "each person pays :" + personshare;
                         System.out.println(shareLine);
                     }
                 }
-
-                case 2 ->{
+                case 2 ->
                    addFriend(sc,friendsList);
-                }
+
 
                 case 3 ->{
                     if(friendsList.isEmpty()) System.out.println("No friends added yet.Add friends first!");
@@ -57,9 +56,9 @@ public class Main{
                     runstate = false;
                 }
 
-                default ->{
+                default ->
                     System.out.println("Invalid choice.Try again!");
-                }
+
 
             }
         }
@@ -68,8 +67,9 @@ public class Main{
     public static void addFriend(Scanner sc, ArrayList<Friend> friendsList){
         System.out.println("Enter friend name:");
         String friendName = sc.nextLine();
-        friendsList.add(new Friend(friendName));
-        System.out.println("added " + friendName);
+        Friend addFrObj = new Friend(friendName);
+        friendsList.add(addFrObj);
+        System.out.println("added %s ( id %d )".formatted(addFrObj.getName(),addFrObj.getId()));
 
 
     }
